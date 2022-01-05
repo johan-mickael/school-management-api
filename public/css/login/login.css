@@ -1,0 +1,6 @@
+#app {
+    height: 100vh;
+    background-image: url('../../dist/img/background/login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
