@@ -16,11 +16,8 @@ class Cors
      */
     public function handle(Request $request, Closure $next)
     {
-        $origin = $request->getHttpHost() == 'localhost' ?
-                    'http://localhost:4200' : 'http://192.168.1.26:4200';
-
         return $next($request)
-            ->header('Access-Control-Allow-Origin', $origin)
+            ->header('Access-Control-Allow-Origin', env('APP_FRONT', 'http://localhost:4200'))
             ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS')
             ->header('Access-Control-Allow-Headers', 'Content-Type, Authorizations');
     }
