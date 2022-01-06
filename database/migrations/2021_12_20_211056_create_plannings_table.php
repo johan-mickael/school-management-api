@@ -24,12 +24,12 @@ class CreatePlanningsTable extends Migration
             $table->time('end')->nullable(false);
             $table->boolean('is_remote')->default(false);
             $table->string('description')->nullable(true);
+            $table->tinyInteger('status')->default(0);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->foreign('subclass_id')->references('id')->on('subclasses');
             $table->foreign('subject_id')->references('id')->on('subjects');
         });
-
         self::insert();
         self::initialize_views();
     }
@@ -69,6 +69,7 @@ class CreatePlanningsTable extends Migration
         p.end,
         p.is_remote,
         p.description,
+        p.status,
         s.name subject_name,
         s.description subject_description,
         CONCAT(pr.first_name, ' ', pr.last_name) professor_name

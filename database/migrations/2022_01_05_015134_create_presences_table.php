@@ -22,7 +22,6 @@ class CreatePresencesTable extends Migration
             $table->boolean('is_present')->default(false);
             $table->boolean('is_late')->default(false);
             $table->string('comment')->nullable(true);
-            $table->boolean('is_saved')->default(false);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->foreign('student_id')->references('id')->on('students');

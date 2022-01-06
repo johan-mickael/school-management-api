@@ -3,7 +3,6 @@
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PlanningsController;
-use App\Http\Controllers\PointingController;
 use App\Http\Controllers\PresenceController;
 use App\Http\Controllers\SubclassController;
 use Illuminate\Http\Request;
@@ -34,3 +33,4 @@ Route::middleware(['cors'])->group(function () {
     Route::get('/classes', [ClassController::class, 'get']);
     Route::post('/presences', [PresenceController::class, 'save']);
 });
+
