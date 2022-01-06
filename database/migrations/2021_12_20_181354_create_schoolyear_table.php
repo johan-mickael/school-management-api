@@ -21,8 +21,6 @@ class CreateSchoolyearTable extends Migration
             $table->date('end')->nullable(false);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('by_user');
-            $table->foreign('by_user')->references('id')->on('users');
             $table->index(['start', 'end']);
         });
 
@@ -41,8 +39,8 @@ class CreateSchoolyearTable extends Migration
 
     static function insert() {
         $data = [
-            ['description' => 'Année 2020 - 2021', 'start' => '2020-10-01', 'end' => '2021-08-31', 'by_user' => 1],
-            ['description' => 'Année 2021 - 2022', 'start' => '2021-10-01', 'end' => '2022-08-31', 'by_user' => 1]
+            ['description' => 'Année 2020 - 2021', 'start' => '2020-10-01', 'end' => '2021-08-31'],
+            ['description' => 'Année 2021 - 2022', 'start' => '2021-10-01', 'end' => '2022-08-31']
         ];
         DB::table('schoolyear')->insert($data);
     }

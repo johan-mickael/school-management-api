@@ -20,8 +20,6 @@ class CreateClassesTable extends Migration
             $table->string('description')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('by_user');
-            $table->foreign('by_user')->references('id')->on('users');
         });
 
         self::insert();
@@ -39,8 +37,8 @@ class CreateClassesTable extends Migration
 
     static function insert() {
         $data = [
-            ['name' => 'E1', 'description' => 'première année', 'by_user' => 1],
-            ['name' => 'E2', 'description' => 'deuxième année', 'by_user' => 1]
+            ['name' => 'E1', 'description' => 'première année'],
+            ['name' => 'E2', 'description' => 'deuxième année']
         ];
         DB::table('classes')->insert($data);
     }

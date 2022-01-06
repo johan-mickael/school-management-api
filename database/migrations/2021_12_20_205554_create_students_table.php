@@ -23,9 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('image_url')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('by_user');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('by_user')->references('id')->on('users');
         });
 
         self::insert();
@@ -43,8 +41,8 @@ class CreateStudentsTable extends Migration
 
     static function insert() {
         $data = [
-            ['first_name' => 'johan', 'last_name' => 'mickaël', 'user_id' => 6, 'by_user' => 1],
-            ['first_name' => 'andy', 'last_name' => 'innocent', 'user_id' => 7, 'by_user' => 1]
+            ['first_name' => 'johan', 'last_name' => 'mickaël', 'user_id' => 6],
+            ['first_name' => 'andy', 'last_name' => 'innocent', 'user_id' => 7]
         ];
         DB::table('students')->insert($data);
     }

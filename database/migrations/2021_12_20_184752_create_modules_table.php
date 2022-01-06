@@ -20,8 +20,6 @@ class CreateModulesTable extends Migration
             $table->string('description')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('by_user');
-            $table->foreign('by_user')->references('id')->on('users');
         });
 
         self::insert();
@@ -39,8 +37,8 @@ class CreateModulesTable extends Migration
 
     static function insert() {
         $data = [
-            ['name' => '2TECH1', 'description' => 'Module tech1 en deuxième année tronc commun', 'by_user' => 1],
-            ['name' => '2TECH2', 'description' => 'Module tech2 deuxième année tronc commun', 'by_user' => 1]
+            ['name' => '2TECH1', 'description' => 'Module tech1 en deuxième année tronc commun'],
+            ['name' => '2TECH2', 'description' => 'Module tech2 deuxième année tronc commun']
         ];
         DB::table('modules')->insert($data);
     }

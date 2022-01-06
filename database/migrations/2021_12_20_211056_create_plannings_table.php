@@ -26,10 +26,8 @@ class CreatePlanningsTable extends Migration
             $table->string('description')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('by_user');
             $table->foreign('subclass_id')->references('id')->on('subclasses');
             $table->foreign('subject_id')->references('id')->on('subjects');
-            $table->foreign('by_user')->references('id')->on('users');
         });
 
         self::insert();
@@ -49,12 +47,12 @@ class CreatePlanningsTable extends Migration
     static function insert()
     {
         $data = [
-            ['subject_id' => 1, 'subclass_id' => 2, 'place' => 'salle v', 'planning_date' => '2022-01-05', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'by_user' => 1],
-            ['subject_id' => 1, 'subclass_id' => 2, 'place' => 'salle v', 'planning_date' => '2022-01-05', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => false, 'by_user' => 1],
-            ['subject_id' => 1, 'subclass_id' => 2, 'place' => 'salle v', 'planning_date' => '2022-01-07', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => true, 'by_user' => 1],
-            ['subject_id' => 1, 'subclass_id' => 2, 'place' => 'salle v', 'planning_date' => '2022-01-07', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => true, 'by_user' => 1],
-            ['subject_id' => 2, 'subclass_id' => 1, 'place' => 'salle d', 'planning_date' => '2022-01-07', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'by_user' => 1],
-            ['subject_id' => 2, 'subclass_id' => 1, 'place' => 'salle d', 'planning_date' => '2022-01-07', 'start' => '13:00:00', 'end' => '17:00:00', 'is_remote' => false, 'by_user' => 1]
+            ['subject_id' => 1, 'subclass_id' => 2, 'place' => 'salle v', 'planning_date' => '2022-01-05', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false],
+            ['subject_id' => 1, 'subclass_id' => 2, 'place' => 'salle v', 'planning_date' => '2022-01-05', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => false],
+            ['subject_id' => 1, 'subclass_id' => 2, 'place' => 'salle v', 'planning_date' => '2022-01-07', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => true],
+            ['subject_id' => 1, 'subclass_id' => 2, 'place' => 'salle v', 'planning_date' => '2022-01-07', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => true],
+            ['subject_id' => 2, 'subclass_id' => 1, 'place' => 'salle d', 'planning_date' => '2022-01-07', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false],
+            ['subject_id' => 2, 'subclass_id' => 1, 'place' => 'salle d', 'planning_date' => '2022-01-07', 'start' => '13:00:00', 'end' => '17:00:00', 'is_remote' => false]
         ];
         DB::table('plannings')->insert($data);
     }

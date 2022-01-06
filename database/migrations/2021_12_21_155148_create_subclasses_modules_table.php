@@ -20,10 +20,8 @@ class CreateSubclassesModulesTable extends Migration
             $table->unsignedInteger('module_id');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('by_user');
             $table->foreign('subclass_id')->references('id')->on('subclasses');
             $table->foreign('module_id')->references('id')->on('modules');
-            $table->foreign('by_user')->references('id')->on('users');
         });
 
         self::insert();
@@ -41,8 +39,8 @@ class CreateSubclassesModulesTable extends Migration
 
     static function insert() {
         $data = [
-            ['subclass_id' => 2, 'module_id' => 1, 'by_user' => 1],
-            ['subclass_id' => 2, 'module_id' => 2, 'by_user' => 1]
+            ['subclass_id' => 2, 'module_id' => 1],
+            ['subclass_id' => 2, 'module_id' => 2]
         ];
         DB::table('subclasses_modules')->insert($data);
     }

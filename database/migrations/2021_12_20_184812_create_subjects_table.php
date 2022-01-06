@@ -22,10 +22,8 @@ class CreateSubjectsTable extends Migration
             $table->string('description')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('by_user');
             $table->foreign('professor_id')->references('id')->on('professors');
             $table->foreign('module_id')->references('id')->on('modules');
-            $table->foreign('by_user')->references('id')->on('users');
         });
 
         self::insert();
@@ -43,9 +41,9 @@ class CreateSubjectsTable extends Migration
 
     static function insert() {
         $data = [
-            ['name' => '2LINCLI', 'professor_id' => 1, 'module_id' => 1, 'description' => 'linux client os administration advanced', 'by_user' => 1],
-            ['name' => '2WINSVR', 'professor_id' => 2, 'module_id' => 1, 'description' => 'windows server os administration advanced', 'by_user' => 1],
-            ['name' => '2ALGDAT', 'professor_id' => 2, 'module_id' => 1, 'description' => 'windows server os administration advanced', 'by_user' => 1]
+            ['name' => '2LINCLI', 'professor_id' => 1, 'module_id' => 1, 'description' => 'linux client os administration advanced'],
+            ['name' => '2WINSVR', 'professor_id' => 2, 'module_id' => 1, 'description' => 'windows server os administration advanced'],
+            ['name' => '2ALGDAT', 'professor_id' => 2, 'module_id' => 1, 'description' => 'windows server os administration advanced']
         ];
         DB::table('subjects')->insert($data);
     }

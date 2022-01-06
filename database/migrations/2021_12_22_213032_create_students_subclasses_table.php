@@ -21,11 +21,9 @@ class CreateStudentsSubclassesTable extends Migration
             $table->unsignedInteger('schoolyear_id');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('by_user');
             $table->foreign('student_id')->references('id')->on('students');
             $table->foreign('subclass_id')->references('id')->on('subclasses');
             $table->foreign('schoolyear_id')->references('id')->on('schoolyear');
-            $table->foreign('by_user')->references('id')->on('users');
         });
 
         self::insert();
@@ -45,9 +43,9 @@ class CreateStudentsSubclassesTable extends Migration
     static function insert()
     {
         $data = [
-            ['student_id' => 1, 'subclass_id' => 2, 'schoolyear_id' => 2, 'by_user' => 1],
-            ['student_id' => 2, 'subclass_id' => 1, 'schoolyear_id' => 1, 'by_user' => 1],
-            ['student_id' => 2, 'subclass_id' => 2, 'schoolyear_id' => 2, 'by_user' => 1]
+            ['student_id' => 1, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['student_id' => 2, 'subclass_id' => 1, 'schoolyear_id' => 1],
+            ['student_id' => 2, 'subclass_id' => 2, 'schoolyear_id' => 2]
         ];
         DB::table('students_subclasses')->insert($data);
     }
