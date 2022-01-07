@@ -12,22 +12,32 @@ class Presence extends Model
     use HasFactory;
     protected $table = 'PRESENCES';
 
-    public const status_created = 0;
-    public const status_saved = 1;
-    public const status_done = 2;
-
-    public static function _insert($input, $planning_id) {
-        $checkPlanning = DB::table('PRESENCES')->where('planning_id', '=', $planning_id)->get();
-        if(!$checkPlanning->count()) {
-            DB::table('plannings')
-                ->where('id', $input[0]['planning_id'])
-                ->update(['status' => Presence::status_saved]);
+    public static function _insert($input, $planningId, $terminate)
+    {
+        if ($terminate) {
+            Planning::updateStatus($planningId, Planning::status_done);
         } else {
-            DB::table('PRESENCES')
-                ->where('planning_id', '=', $planning_id)
-                ->delete();
+            if (Presence::isSaved($planningId)) {
+                Presence::deleteAllPresence($planningId);
+            } else {
+                Planning::updateStatus($planningId, Planning::status_saved);
+            }
         }
         Presence::insert($input);
     }
 
+    public static function deleteAllPresence($planningId)
+    {
+        DB::table('PRESENCES')
+            ->where('planning_id', '=', $planningId)
+            ->delete();
+    }
+
+    public static function isSaved($planningId)
+    {
+        $checkPlanning = DB::table('PRESENCES')
+            ->where('planning_id', '=', $planningId)
+            ->get();
+        return $checkPlanning->count();
+    }
 }

@@ -13,6 +13,9 @@ class Planning extends Model
 {
     use HasFactory;
     protected $table = 'V_PLANNINGS';
+    public const status_created = 0;
+    public const status_saved = 1;
+    public const status_done = 2;
 
     public static function get_v_plannings_for_calendar($subclass_id = null)
     {
@@ -35,5 +38,11 @@ class Planning extends Model
             $res[$i]['subclassId'] = $planning->subclass_id;
         }
         return $res;
+    }
+
+    public static function updateStatus($planningId, $status) {
+        DB::table('PLANNINGS')
+            ->where('id', $planningId)
+            ->update(['status' => $status]);
     }
 }

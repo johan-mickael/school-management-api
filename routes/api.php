@@ -26,11 +26,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware(['cors'])->group(function () {
     Route::get('/dashboards', [DashboardController::class, 'index']);
     Route::get('/plannings', [PlanningsController::class, 'get']);
-    Route::get('/plannings/{planningId}', [PlanningsController::class, 'show']);
     Route::get('/plannings/filter/{classId}', [PlanningsController::class, 'filter']);
     Route::get('/subclasses', [SubclassController::class, 'get']);
     Route::get('/subclasses/{classId}', [SubclassController::class, 'show']);
     Route::get('/classes', [ClassController::class, 'get']);
-    Route::post('/presences', [PresenceController::class, 'save']);
+    Route::get('/presences/{planningId}', [PresenceController::class, 'get']);
+    Route::post('/presences/save', [PresenceController::class, 'save']);
+    Route::post('/presences/terminate', [PresenceController::class, 'terminate']);
 });
 
