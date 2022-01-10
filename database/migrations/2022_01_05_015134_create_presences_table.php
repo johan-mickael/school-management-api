@@ -21,6 +21,7 @@ class CreatePresencesTable extends Migration
             $table->boolean('is_present_class')->default(false);
             $table->boolean('is_present')->default(false);
             $table->boolean('is_late')->default(false);
+            $table->time('arriving_time')->nullable(true);
             $table->string('comment')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -39,11 +40,4 @@ class CreatePresencesTable extends Migration
         Schema::dropIfExists('presences');
     }
 
-    static function insert() {
-        $data = [
-            ['description' => 'Année 2020 - 2021', 'start' => '2020-10-01', 'end' => '2021-08-31'],
-            ['description' => 'Année 2021 - 2022', 'start' => '2021-10-01', 'end' => '2022-08-31']
-        ];
-        DB::table('schoolyear')->insert($data);
-    }
 }

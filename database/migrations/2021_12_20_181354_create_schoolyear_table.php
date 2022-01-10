@@ -39,8 +39,8 @@ class CreateSchoolyearTable extends Migration
 
     static function insert() {
         $data = [
-            ['description' => 'Année 2020 - 2021', 'start' => '2020-10-01', 'end' => '2021-08-31'],
-            ['description' => 'Année 2021 - 2022', 'start' => '2021-10-01', 'end' => '2022-08-31']
+            ['description' => '2020 - 2021', 'start' => '2020-10-01', 'end' => '2021-08-31'],
+            ['description' => '2021 - 2022', 'start' => '2021-10-01', 'end' => '2022-08-31']
         ];
         DB::table('schoolyear')->insert($data);
     }

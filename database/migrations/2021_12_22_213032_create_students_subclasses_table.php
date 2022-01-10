@@ -25,7 +25,6 @@ class CreateStudentsSubclassesTable extends Migration
             $table->foreign('subclass_id')->references('id')->on('subclasses');
             $table->foreign('schoolyear_id')->references('id')->on('schoolyear');
         });
-
         self::insert();
         self::initialize_views();
     }
@@ -55,8 +54,9 @@ class CreateStudentsSubclassesTable extends Migration
         DB::statement("CREATE OR REPLACE VIEW v_students_subclasses_schoolyear AS
         SELECT
             ss.id student_subclass_id,
-            ss.student_id id,
+            ss.student_id,
             ss.subclass_id,
+            sy.id school_year_id,
             sy.start,
             sy.end,
             s.first_name,
