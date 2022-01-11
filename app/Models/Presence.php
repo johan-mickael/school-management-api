@@ -16,6 +16,7 @@ class Presence extends Model
     {
         if ($terminate) {
             Planning::updateStatus($planningId, Planning::status_done);
+            if(Presence::isSaved($planningId)) return;
         } else {
             if (Presence::isSaved($planningId)) {
                 Presence::deleteAllPresence($planningId);

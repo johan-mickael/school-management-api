@@ -17,16 +17,13 @@ class Planning extends Model
     public const status_saved = 1;
     public const status_done = 2;
 
-    public static function get_v_plannings_for_calendar($subclass_id = null)
+    public static function get_v_plannings_for_calendar($schoolyearId, $subclass_id = null)
     {
-        if ($subclass_id == null) {
-            $plannings = DB::table('v_plannings')
-                ->get();
-        } else {
-            $plannings = DB::table('v_plannings')
-                ->where('subclass_id', '=', $subclass_id)
-                ->get();
-        }
+        $query = DB::table('v_plannings')
+            ->where('schoolyear_id', '=', $schoolyearId);
+        if ($subclass_id != null)
+            $query = $query->where('subclass_id', '=', $subclass_id);
+        $plannings = $query->get();
         $res = array();
         for ($i = 0; $i < count($plannings); $i++) {
             $planning = $plannings[$i];
@@ -36,11 +33,13 @@ class Planning extends Model
             $res[$i]['end'] = concat_date_and_time($planning->planning_date, $planning->end);
             $res[$i]['isRemote'] = $planning->is_remote;
             $res[$i]['subclassId'] = $planning->subclass_id;
+            $res[$i]['schoolyearId'] = $planning->schoolyear_id;
         }
         return $res;
     }
 
-    public static function updateStatus($planningId, $status) {
+    public static function updateStatus($planningId, $status)
+    {
         DB::table('PLANNINGS')
             ->where('id', $planningId)
             ->update(['status' => $status]);

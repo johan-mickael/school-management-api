@@ -27,8 +27,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware(['cors'])->group(function () {
     Route::get('/dashboards', [DashboardController::class, 'index']);
-    Route::get('/plannings', [PlanningsController::class, 'get']);
-    Route::get('/plannings/filter/{classId}', [PlanningsController::class, 'filter']);
+    Route::get('/plannings/{schoolyearId}', [PlanningsController::class, 'get']);
+    Route::get('/plannings/filter/{schoolyearId}/{classId}', [PlanningsController::class, 'filter']);
     Route::get('/subclasses', [SubclassController::class, 'get']);
     Route::get('/subclasses/{classId}', [SubclassController::class, 'show']);
     Route::get('/subclasses/students/{subclassId}/{schoolYearId}', [StudentController::class, 'getStudents']);

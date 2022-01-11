@@ -8,17 +8,17 @@ use Illuminate\Support\Facades\DB;
 
 class PlanningsController extends Controller
 {
-    public function get()
+    public function get($schoolyearId)
     {
-        return Planning::get_v_plannings_for_calendar();
+        return Planning::get_v_plannings_for_calendar($schoolyearId);
     }
 
-    public function filter($classId)
+    public function filter($schoolyearId, $classId)
     {
         if($classId < 1)
-        return $this->get();
-        return Planning::get_v_plannings_for_calendar($classId);
+        return $this->get($schoolyearId);
+        return Planning::get_v_plannings_for_calendar($schoolyearId, $classId);
     }
 
-   
+
 }

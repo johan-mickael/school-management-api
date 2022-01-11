@@ -18,6 +18,7 @@ class CreatePresencesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('student_id');
             $table->unsignedInteger('planning_id');
+            $table->unsignedInteger('subject_id');
             $table->boolean('is_present_class')->default(false);
             $table->boolean('is_present')->default(false);
             $table->boolean('is_late')->default(false);
@@ -27,7 +28,10 @@ class CreatePresencesTable extends Migration
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->foreign('student_id')->references('id')->on('students');
             $table->foreign('planning_id')->references('id')->on('plannings');
+            $table->foreign('subject_id')->references('id')->on('subjects');
         });
+
+        self::initializeViews();
     }
 
     /**
@@ -40,4 +44,10 @@ class CreatePresencesTable extends Migration
         Schema::dropIfExists('presences');
     }
 
+    public static function initializeViews()
+    {
+        DB::statement("CREATE OR REPLACE VIEW v_plannings_presences AS SELECT pr.student_id, pr.planning_id, pr.subject_id, pr.is_present_class, pr.is_present, pr.is_late, HOUR(TIMEDIFF(pl.start, pl.end)) course_duration, pl.is_remote, coalesce(HOUR( TIMEDIFF(pl.end, pr.arriving_time)), 0) assisting_duration FROM presences pr LEFT JOIN plannings pl ON pl.id = pr.planning_id");
+        DB::statement("CREATE OR REPLACE VIEW v_plannings_presences_duration AS SELECT student_id, planning_id, subject_id, is_remote, is_present_class, is_present, is_late, course_duration, assisting_duration, course_duration - assisting_duration non_assisting_duration, CASE WHEN is_present_class = TRUE THEN assisting_duration ELSE 0 END assisting_duration_class, CASE WHEN is_present_class = FALSE THEN assisting_duration ELSE 0 END assisting_duration_remote FROM v_plannings_presences");
+        DB::statement("CREATE OR REPLACE VIEW v_plannings_presences_durations AS SELECT student_id, subject_id, SUM(course_duration) course_duration, SUM(assisting_duration) assisting_duration, SUM(non_assisting_duration) non_assisting_duration, SUM(assisting_duration_class) assisting_duration_class, SUM(assisting_duration_remote) assisting_duration_remote FROM `v_plannings_presences_duration` GROUP BY student_id, subject_id");
+    }
 }
