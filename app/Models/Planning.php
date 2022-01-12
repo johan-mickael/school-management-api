@@ -42,7 +42,7 @@ class Planning extends Model
     {
         $query = sprintf("select * from v_plannings where schoolyear_id = %s", $schoolyearId);
         if ($subclass_id != null)
-            $query = sprintf($query + " and subclass_id = %s", $subclass_id);
+            $query = sprintf($query . " and subclass_id = %s", $subclass_id);
         $plannings = DB::select($query);
         $res = array();
         for ($i = 0; $i < count($plannings); $i++) {
