@@ -39,7 +39,7 @@ class CreateAdministratorsTable extends Migration
 
     static function insert() {
         $data = [
-            ['first_name' => 'sebastien', 'last_name' => 'ferrari', 'description' => 'responsable pédagogie campus paris']
+            ['id' => 1, 'first_name' => 'sebastien', 'last_name' => 'ferrari', 'description' => 'responsable pédagogie campus paris']
         ];
         DB::table('administrators')->insert($data);
     }

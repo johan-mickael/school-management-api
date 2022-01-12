@@ -37,8 +37,8 @@ class CreateModulesTable extends Migration
 
     static function insert() {
         $data = [
-            ['name' => '2TECH1', 'description' => 'Module tech1 en deuxième année tronc commun'],
-            ['name' => '2TECH2', 'description' => 'Module tech2 deuxième année tronc commun']
+            ['id' => 1,'name' => '2TECH1', 'description' => 'Module tech1 en deuxième année tronc commun'],
+            ['id' => 2,'name' => '2TECH2', 'description' => 'Module tech2 deuxième année tronc commun']
         ];
         DB::table('modules')->insert($data);
     }

@@ -37,8 +37,8 @@ class CreateClassesTable extends Migration
 
     static function insert() {
         $data = [
-            ['name' => 'E1', 'description' => 'première année'],
-            ['name' => 'E2', 'description' => 'deuxième année']
+            ['id' => 1,'name' => 'E1', 'description' => 'première année'],
+            ['id' => 2,'name' => 'E2', 'description' => 'deuxième année']
         ];
         DB::table('classes')->insert($data);
     }

@@ -41,9 +41,9 @@ class CreateSubjectsTable extends Migration
 
     static function insert() {
         $data = [
-            ['name' => '2LINCLI', 'professor_id' => 1, 'module_id' => 1, 'description' => 'linux client os administration advanced'],
-            ['name' => '2WINSVR', 'professor_id' => 2, 'module_id' => 1, 'description' => 'windows server os administration advanced'],
-            ['name' => '2ALGDAT', 'professor_id' => 2, 'module_id' => 1, 'description' => 'windows server os administration advanced']
+            ['id' => 1, 'name' => '2LINCLI', 'professor_id' => 1, 'module_id' => 1, 'description' => 'linux client os administration advanced'],
+            ['id' => 2, 'name' => '2WINSVR', 'professor_id' => 2, 'module_id' => 1, 'description' => 'windows server os administration advanced'],
+            ['id' => 3, 'name' => '2ALGDAT', 'professor_id' => 2, 'module_id' => 1, 'description' => 'windows server os administration advanced']
         ];
         DB::table('subjects')->insert($data);
     }

@@ -39,8 +39,8 @@ class CreateSubclassesModulesTable extends Migration
 
     static function insert() {
         $data = [
-            ['subclass_id' => 2, 'module_id' => 1],
-            ['subclass_id' => 2, 'module_id' => 2]
+            ['id' => 1,'subclass_id' => 2, 'module_id' => 1],
+            ['id' => 2,'subclass_id' => 2, 'module_id' => 2]
         ];
         DB::table('subclasses_modules')->insert($data);
     }

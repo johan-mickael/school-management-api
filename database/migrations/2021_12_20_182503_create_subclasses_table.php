@@ -40,14 +40,14 @@ class CreateSubclassesTable extends Migration
 
     static function insert() {
         $data = [
-            ['name' => 'E1A', 'class_id' => 1, 'description' => 'E1A tronc commun'],
-            ['name' => 'E2A', 'class_id' => 2, 'description' => 'E2A tronc commun']
+            ['id' => 1, 'name' => 'E1A', 'class_id' => 1, 'description' => 'E1A tronc commun'],
+            ['id' => 2, 'name' => 'E2A', 'class_id' => 2, 'description' => 'E2A tronc commun']
         ];
         DB::table('subclasses')->insert($data);
     }
 
     static function create_view_subclasses() {
-        DB::statement("
+        DB::unprepared("
             CREATE OR REPLACE VIEW v_subclasses AS SELECT
             s.id,
             s.name,

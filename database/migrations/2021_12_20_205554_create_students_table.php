@@ -39,10 +39,10 @@ class CreateStudentsTable extends Migration
 
     static function insert() {
         $data = [
-            ['first_name' => 'johan', 'last_name' => 'mickaël'],
-            ['first_name' => 'andy', 'last_name' => 'innocent'],
-            ['first_name' => 'toky', 'last_name' => 'be'],
-            ['first_name' => 'andry', 'last_name' => 'kely']
+            ['id' => 1,'first_name' => 'johan', 'last_name' => 'mickaël'],
+            ['id' => 2,'first_name' => 'andy', 'last_name' => 'innocent'],
+            ['id' => 3,'first_name' => 'toky', 'last_name' => 'be'],
+            ['id' => 4,'first_name' => 'andry', 'last_name' => 'kely']
         ];
         DB::table('students')->insert($data);
     }

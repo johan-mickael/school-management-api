@@ -39,9 +39,9 @@ class CreateProfessorsTable extends Migration
 
     static function insert() {
         $data = [
-            ['first_name' => 'mhand', 'last_name' => 'boufala'],
-            ['first_name' => 'habib', 'last_name' => 'abid'],
-            ['first_name' => 'seykamal', 'last_name' => 'medetov']
+            ['id' => 1, 'first_name' => 'mhand', 'last_name' => 'boufala'],
+            ['id' => 2, 'first_name' => 'habib', 'last_name' => 'abid'],
+            ['id' => 3, 'first_name' => 'seykamal', 'last_name' => 'medetov']
         ];
         DB::table('professors')->insert($data);
     }

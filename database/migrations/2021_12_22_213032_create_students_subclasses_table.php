@@ -42,18 +42,18 @@ class CreateStudentsSubclassesTable extends Migration
     static function insert()
     {
         $data = [
-            ['student_id' => 1, 'subclass_id' => 2, 'schoolyear_id' => 2],
-            ['student_id' => 2, 'subclass_id' => 1, 'schoolyear_id' => 1],
-            ['student_id' => 2, 'subclass_id' => 2, 'schoolyear_id' => 2],
-            ['student_id' => 3, 'subclass_id' => 2, 'schoolyear_id' => 1],
-            ['student_id' => 4, 'subclass_id' => 2, 'schoolyear_id' => 1]
+            ['id' => 1,'student_id' => 1, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['id' => 2,'student_id' => 2, 'subclass_id' => 1, 'schoolyear_id' => 1],
+            ['id' => 3,'student_id' => 2, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['id' => 4,'student_id' => 3, 'subclass_id' => 2, 'schoolyear_id' => 1],
+            ['id' => 5,'student_id' => 4, 'subclass_id' => 2, 'schoolyear_id' => 1]
         ];
         DB::table('students_subclasses')->insert($data);
     }
 
     static function initialize_views()
     {
-        DB::statement("CREATE OR REPLACE VIEW v_students_subclasses_schoolyear AS
+        DB::unprepared("CREATE OR REPLACE VIEW v_students_subclasses_schoolyear AS
         SELECT
             ss.id student_subclass_id,
             ss.student_id,
