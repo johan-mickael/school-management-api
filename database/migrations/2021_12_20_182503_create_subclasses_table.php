@@ -40,8 +40,15 @@ class CreateSubclassesTable extends Migration
 
     static function insert() {
         $data = [
-            ['id' => 1, 'name' => 'E1A', 'class_id' => 1, 'description' => 'E1A tronc commun'],
-            ['id' => 2, 'name' => 'E2A', 'class_id' => 2, 'description' => 'E2A tronc commun']
+            ['id' => 1, 'name' => 'E1A', 'class_id' => 1, 'description' => 'E1 tronc commun'],
+            ['id' => 2, 'name' => 'E2A', 'class_id' => 2, 'description' => 'E2 tronc commun'],
+            ['id' => 3, 'name' => 'E3A', 'class_id' => 3, 'description' => 'E3 Data & Application Design specialization'],
+            ['id' => 4, 'name' => 'E3B', 'class_id' => 3, 'description' => 'E3 Cyber ​​security, Cloud, systems and networks specialization'],
+            ['id' => 5, 'name' => 'E4A', 'class_id' => 4, 'description' => 'E4 Data & Application Design specialization'],
+            ['id' => 6, 'name' => 'E4B', 'class_id' => 4, 'description' => 'E4 Cyber ​​security, Cloud, systems and networks specialization'],
+            ['id' => 7, 'name' => 'E5A', 'class_id' => 5, 'description' => 'E5 Web & Mobile'],
+            ['id' => 8, 'name' => 'E5B', 'class_id' => 5, 'description' => 'E5 Big Data & BI'],
+            ['id' => 9, 'name' => 'E5C', 'class_id' => 5, 'description' => 'E5 Cyber ​​security, Cloud, systems and networks'],
         ];
         DB::table('subclasses')->insert($data);
     }

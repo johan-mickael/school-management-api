@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
 
-        self::insert();
+        // self::insert();
     }
 
     /**

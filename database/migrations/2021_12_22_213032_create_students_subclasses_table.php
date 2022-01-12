@@ -42,11 +42,30 @@ class CreateStudentsSubclassesTable extends Migration
     static function insert()
     {
         $data = [
-            ['id' => 1,'student_id' => 1, 'subclass_id' => 2, 'schoolyear_id' => 2],
-            ['id' => 2,'student_id' => 2, 'subclass_id' => 1, 'schoolyear_id' => 1],
-            ['id' => 3,'student_id' => 2, 'subclass_id' => 2, 'schoolyear_id' => 2],
-            ['id' => 4,'student_id' => 3, 'subclass_id' => 2, 'schoolyear_id' => 1],
-            ['id' => 5,'student_id' => 4, 'subclass_id' => 2, 'schoolyear_id' => 1]
+            ['id' => 1,'student_id' => 1, 'subclass_id' => 1, 'schoolyear_id' => 2],
+            ['id' => 2,'student_id' => 2, 'subclass_id' => 1, 'schoolyear_id' => 2],
+            ['id' => 3,'student_id' => 3, 'subclass_id' => 1, 'schoolyear_id' => 2],
+            ['id' => 4,'student_id' => 4, 'subclass_id' => 1, 'schoolyear_id' => 2],
+            ['id' => 5,'student_id' => 5, 'subclass_id' => 1, 'schoolyear_id' => 2],
+            ['id' => 6,'student_id' => 6, 'subclass_id' => 1, 'schoolyear_id' => 2],
+            ['id' => 7,'student_id' => 7, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['id' => 8,'student_id' => 8, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['id' => 9,'student_id' => 9, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['id' => 10,'student_id' => 10, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['id' => 11,'student_id' => 11, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['id' => 12,'student_id' => 12, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['id' => 13,'student_id' => 13, 'subclass_id' => 3, 'schoolyear_id' => 2],
+            ['id' => 14,'student_id' => 14, 'subclass_id' => 3, 'schoolyear_id' => 2],
+            ['id' => 15,'student_id' => 15, 'subclass_id' => 3, 'schoolyear_id' => 2],
+            ['id' => 16,'student_id' => 16, 'subclass_id' => 3, 'schoolyear_id' => 2],
+            ['id' => 17,'student_id' => 17, 'subclass_id' => 3, 'schoolyear_id' => 2],
+            ['id' => 18,'student_id' => 18, 'subclass_id' => 4, 'schoolyear_id' => 2],
+            ['id' => 19,'student_id' => 19, 'subclass_id' => 4, 'schoolyear_id' => 2],
+            ['id' => 20,'student_id' => 20, 'subclass_id' => 4, 'schoolyear_id' => 2],
+            ['id' => 21,'student_id' => 21, 'subclass_id' => 4, 'schoolyear_id' => 2],
+            ['id' => 22,'student_id' => 22, 'subclass_id' => 4, 'schoolyear_id' => 2],
+            ['id' => 23,'student_id' => 23, 'subclass_id' => 4, 'schoolyear_id' => 2],
+
         ];
         DB::table('students_subclasses')->insert($data);
     }
