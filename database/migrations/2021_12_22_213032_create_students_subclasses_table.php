@@ -44,7 +44,9 @@ class CreateStudentsSubclassesTable extends Migration
         $data = [
             ['student_id' => 1, 'subclass_id' => 2, 'schoolyear_id' => 2],
             ['student_id' => 2, 'subclass_id' => 1, 'schoolyear_id' => 1],
-            ['student_id' => 2, 'subclass_id' => 2, 'schoolyear_id' => 2]
+            ['student_id' => 2, 'subclass_id' => 2, 'schoolyear_id' => 2],
+            ['student_id' => 3, 'subclass_id' => 2, 'schoolyear_id' => 1],
+            ['student_id' => 4, 'subclass_id' => 2, 'schoolyear_id' => 1]
         ];
         DB::table('students_subclasses')->insert($data);
     }
@@ -56,7 +58,7 @@ class CreateStudentsSubclassesTable extends Migration
             ss.id student_subclass_id,
             ss.student_id,
             ss.subclass_id,
-            sy.id school_year_id,
+            sy.id schoolyear_id,
             sy.start,
             sy.end,
             s.first_name,

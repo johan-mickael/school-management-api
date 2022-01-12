@@ -19,11 +19,9 @@ class CreateAdministratorsTable extends Migration
             $table->string('first_name', 50)->nullable(false);
             $table->string('last_name', 50)->nullable(false);
             $table->string('description')->nullable(true);
-            $table->unsignedInteger('user_id');
             $table->string('image_url')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->foreign('user_id')->references('id')->on('users');
         });
 
         self::insert();
@@ -41,7 +39,7 @@ class CreateAdministratorsTable extends Migration
 
     static function insert() {
         $data = [
-            ['first_name' => 'sebastien', 'last_name' => 'ferrari', 'description' => 'responsable pédagogie campus paris', 'user_id' => 2]
+            ['first_name' => 'sebastien', 'last_name' => 'ferrari', 'description' => 'responsable pédagogie campus paris']
         ];
         DB::table('administrators')->insert($data);
     }

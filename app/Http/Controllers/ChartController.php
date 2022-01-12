@@ -8,13 +8,20 @@ use Illuminate\Support\Facades\DB;
 class ChartController extends Controller
 {
 
-    public function get_planning_remote_hour($subjectId)
+    public function getPlanningRemoteHour($subjectId, $schoolyearId)
     {
-        return Chart::get_v_planning_hour($subjectId, null, null);
+        return Chart::getVPlanningHour($subjectId, $schoolyearId, null, null);
     }
 
-    public function get_planning_status_hour($subjectId, $status)
+    public function getPlanningStatusHour($subjectId, $schoolyearId, $status)
     {
-        return Chart::get_v_planning_hour($subjectId, null, $status);
+        return Chart::getVPlanningHour($subjectId, $schoolyearId, null, $status);
+    }
+
+    public function getVPlanningPresencesDurations($subjectId, $schoolyearId) {
+        return DB::table('v_plannings_presences_durations')
+            ->where('subject_id', '=', $subjectId)
+            ->where('schoolyear_id', '=', $schoolyearId)
+            ->get();
     }
 }

@@ -10,16 +10,17 @@ class Chart extends Model
 {
     use HasFactory;
 
-    static function get_v_planning_hour($subclassId, $isRemote, $status)
+    static function getVPlanningHour($subclassId, $schoolyearId, $isRemote, $status)
     {
         $query = DB::table('v_planning_hour')
-            ->select(DB::raw('subject_id, is_remote, sum(hour) hours'));
-        $query->where('subject_id', '=', $subclassId);
+            ->select(DB::raw('is_remote, sum(hour) hours'));
+        $query->where('subject_id', '=', $subclassId)->where('schoolyear_id', '=', $schoolyearId);
         if ($isRemote != null)
             $query->where('is_remote', '=', $status);
         if ($status != null)
             $query->where('status', '=', $status);
-        return $query->groupBy('subject_id', 'is_remote')
-            ->get();
+        return $query->groupBy('is_remote')->get();
     }
+
+
 }

@@ -37,8 +37,8 @@ Route::middleware(['cors'])->group(function () {
     Route::post('/presences/save', [PresenceController::class, 'save']);
     Route::post('/presences/terminate', [PresenceController::class, 'terminate']);
     Route::get('/schoolyears', [StudentController::class, 'getSchoolYear']);
-    Route::get('/charts/subject/remote/{subjectId}', [ChartController::class, 'get_planning_remote_hour']);
-    Route::get('/charts/subject/remote/{subjectId}/{status}', [ChartController::class, 'get_planning_status_hour']);
-    // Route::get('/charts/subject/status/{subjectId}', [ChartController::class, 'get_planning_remote_hour']);
+    Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}', [ChartController::class, 'getPlanningRemoteHour']);
+    Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}/{status}', [ChartController::class, 'getPlanningStatusHour']);
+    Route::get('/charts/students/assisting/{subjectId}/{schoolyearId}', [ChartController::class, 'getVPlanningPresencesDurations']);
 });
 

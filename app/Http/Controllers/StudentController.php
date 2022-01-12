@@ -14,7 +14,7 @@ class StudentController extends Controller
     public function getStudents($subclassId, $schoolYearId) {
         return DB::table('V_STUDENTS_SUBCLASSES_SCHOOLYEAR')
             ->where('subclass_id', '=', $subclassId)
-            ->where('school_year_id', '=', $schoolYearId)
+            ->where('schoolyear_id', '=', $schoolYearId)
             ->get();
     }
 }

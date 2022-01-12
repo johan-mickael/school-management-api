@@ -44,4 +44,5 @@ class Planning extends Model
             ->where('id', $planningId)
             ->update(['status' => $status]);
     }
+
 }

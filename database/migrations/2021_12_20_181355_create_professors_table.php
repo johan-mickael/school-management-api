@@ -19,11 +19,9 @@ class CreateProfessorsTable extends Migration
             $table->string('first_name', 50)->nullable(false);
             $table->string('last_name', 50)->nullable(false);
             $table->string('description')->nullable(true);
-            $table->unsignedInteger('user_id');
             $table->string('image_url')->nullable(true);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->foreign('user_id')->references('id')->on('users');
         });
 
         self::insert();
@@ -41,9 +39,9 @@ class CreateProfessorsTable extends Migration
 
     static function insert() {
         $data = [
-            ['first_name' => 'mhand', 'last_name' => 'boufala', 'user_id' => 3],
-            ['first_name' => 'habib', 'last_name' => 'abid', 'user_id' => 4],
-            ['first_name' => 'seykamal', 'last_name' => 'medetov', 'user_id' => 5]
+            ['first_name' => 'mhand', 'last_name' => 'boufala'],
+            ['first_name' => 'habib', 'last_name' => 'abid'],
+            ['first_name' => 'seykamal', 'last_name' => 'medetov']
         ];
         DB::table('professors')->insert($data);
     }

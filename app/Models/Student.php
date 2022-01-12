@@ -10,13 +10,12 @@ class Student extends Model
 {
     use HasFactory;
 
-    public static function getByPlanning($subclassId, $planningDate)
+    public static function getStudents($subclassId, $schoolyearId)
     {
         return DB::table('v_students_subclasses_schoolyear')
         ->where([
             ['subclass_id', '=', $subclassId],
-            ['start', '<=', $planningDate],
-            ['end', '>=', $planningDate]
+            ['schoolyear_id', '=', $schoolyearId]
         ])->get();
     }
 }
