@@ -19,6 +19,7 @@ class CreateStudentsSubclassesTable extends Migration
             $table->unsignedInteger('student_id');
             $table->unsignedInteger('subclass_id');
             $table->unsignedInteger('schoolyear_id');
+            $table->boolean('is_remote')->default(false);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->foreign('student_id')->references('id')->on('students');
@@ -77,6 +78,7 @@ class CreateStudentsSubclassesTable extends Migration
             ss.id student_subclass_id,
             ss.student_id,
             ss.subclass_id,
+            ss.is_remote,
             sy.id schoolyear_id,
             sy.start,
             sy.end,
