@@ -18,9 +18,17 @@ class ChartController extends Controller
         return Chart::getVPlanningHour($subjectId, $schoolyearId, null, $status);
     }
 
-    public function getVPlanningPresencesDurations($subjectId, $schoolyearId) {
+    public function getVPlanningPresencesDurations($subjectId, $schoolyearId)
+    {
         return DB::table('v_plannings_presences_durations')
+            ->where('schoolyear_id', '=', $schoolyearId)
             ->where('subject_id', '=', $subjectId)
+            ->get();
+    }
+
+    public function getAllVPlanningPresencesDurations($schoolyearId)
+    {
+        return DB::table('v_all_plannings_presences_durations')
             ->where('schoolyear_id', '=', $schoolyearId)
             ->get();
     }

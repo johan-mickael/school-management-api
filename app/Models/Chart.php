@@ -22,5 +22,4 @@ class Chart extends Model
         return $query->groupBy('is_remote')->get();
     }
 
-
 }

@@ -40,5 +40,5 @@ Route::middleware(['cors'])->group(function () {
     Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}', [ChartController::class, 'getPlanningRemoteHour']);
     Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}/{status}', [ChartController::class, 'getPlanningStatusHour']);
     Route::get('/charts/students/assisting/{subjectId}/{schoolyearId}', [ChartController::class, 'getVPlanningPresencesDurations']);
+    Route::get('/charts/students/assisting/{schoolyearId}', [ChartController::class, 'getAllVPlanningPresencesDurations']);
 });
-
