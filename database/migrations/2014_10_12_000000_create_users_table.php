@@ -17,18 +17,13 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50)->nullable(false);
-            $table->string('email', 100)->unique('user_unique_email');
-            $table->timestamp('email_verified_at')->nullable(true);
-            $table->string('password', 60)->nullable(false);
-            $table->tinyInteger('role')->nullable(false);
-            $table->string('image_url')->nullable(true);
-            $table->rememberToken();
+            $table->string('email')->unique('user_unique_email');
+            $table->string('password')->nullable(false);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
 
-        // self::insert();
+        self::insert();
     }
 
     /**
@@ -43,13 +38,8 @@ class CreateUsersTable extends Migration
 
     static function insert() {
         $data = [
-            ['name' => 'superadmin', 'email' => 'superadmin@estiam.com', 'password' => Hash::make('superadmin'), 'role' => 0],
-            ['name' => 'sebastienferrari', 'email' => 'sebastienferrari@estiam.com', 'password' => Hash::make('sebastienferrari'), 'role' => 1],
-            ['name' => 'mhand boufala', 'email' => 'mhandboufala@estiam.com', 'password' => Hash::make('mhandboufala'), 'role' => 2],
-            ['name' => 'habib abid', 'email' => 'habibabid@estiam.com', 'password' => Hash::make('habibabid'), 'role' => 2],
-            ['name' => 'seykamal medetov', 'email' => 'seykamalmedetov@estiam.com', 'password' => Hash::make('seykamalmedetov'), 'role' => 2],
-            ['name' => 'johan mickaël', 'email' => 'johanmickael@estiam.com', 'password' => Hash::make('johanmickael'), 'role' => 3],
-            ['name' => 'andy innocent', 'email' => 'andyinnocent@estiam.com', 'password' => Hash::make('andyinnocent'), 'role' => 3]
+            ['email' => 'admin@email.com', 'password' => md5('-root1010')],
+            ['email' => 'guest@email.com', 'password' => md5('guest')]
         ];
         DB::table('users')->insert($data);
     }

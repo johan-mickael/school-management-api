@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
@@ -41,4 +42,5 @@ Route::middleware(['cors'])->group(function () {
     Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}/{status}', [ChartController::class, 'getPlanningStatusHour']);
     Route::get('/charts/students/assisting/{subjectId}/{schoolyearId}', [ChartController::class, 'getVPlanningPresencesDurations']);
     Route::get('/charts/students/assisting/{schoolyearId}', [ChartController::class, 'getAllVPlanningPresencesDurations']);
+    Route::post('/login', [LoginController::class, 'login']);
 });
