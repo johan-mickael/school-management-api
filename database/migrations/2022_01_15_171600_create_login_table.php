@@ -17,6 +17,7 @@ class CreateLoginTable extends Migration
     {
         Schema::create('logins', function (Blueprint $table) {
             $table->tinyInteger('user_id');
+            $table->tinyInteger('user_role');
             $table->timestamp('login_date');
             $table->string('token');
             $table->timestamp('expiration')->nullable(true);

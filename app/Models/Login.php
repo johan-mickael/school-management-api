@@ -14,10 +14,11 @@ class Login extends Model
 {
     use HasFactory;
 
-    private static $tokenExpiration = 3;
+    private static $tokenExpiration = 10;
 
     static function login($request)
     {
+        Log::channel('login')->info(json_encode($request));
         $user = DB::table('users')
             ->where('email', $request->username)
             ->where('password', md5($request->password))
@@ -39,6 +40,7 @@ class Login extends Model
         $expiration = strtotime($loginDate . ' + ' . self::$tokenExpiration . ' minute');
         $login = [
             'user_id' => $user->id,
+            'user_role' => $user->role,
             'login_date' => $loginDate,
             'token' => self::generateToken($user),
             'expiration' => date('Y-m-d H:i:s', $expiration)
@@ -52,11 +54,14 @@ class Login extends Model
 
     static function tokenIsValid($token)
     {
+        DB::enableQueryLog();
         $dateNow = date('Y-m-d H:i:s');
         $login = DB::table('logins')
             ->where('token', $token)
             ->where('expiration', '>', $dateNow)
             ->first();
+        $query = DB::getQueryLog();
+        Log::channel('api')->info(json_encode($query));
         return $login != null;
     }
 }

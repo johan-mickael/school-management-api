@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('email')->unique('user_unique_email');
             $table->string('password')->nullable(false);
+            $table->tinyInteger('role')->default(0);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
@@ -38,8 +39,8 @@ class CreateUsersTable extends Migration
 
     static function insert() {
         $data = [
-            ['email' => 'admin@email.com', 'password' => md5('-root1010')],
-            ['email' => 'guest@email.com', 'password' => md5('guest')]
+            ['email' => 'admin@email.com', 'password' => md5('-root1010'), 'role' => 1],
+            ['email' => 'guest@email.com', 'password' => md5('guest'), 'role' => 0]
         ];
         DB::table('users')->insert($data);
     }

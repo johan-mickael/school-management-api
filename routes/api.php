@@ -35,8 +35,6 @@ Route::middleware(['cors', 'token'])->group(function () {
     Route::get('/subclasses/students/{subclassId}/{schoolYearId}', [StudentController::class, 'getStudents']);
     Route::get('/classes', [ClassController::class, 'get']);
     Route::get('/presences/{planningId}', [PresenceController::class, 'get']);
-    Route::post('/presences/save', [PresenceController::class, 'save']);
-    Route::post('/presences/terminate', [PresenceController::class, 'terminate']);
     Route::get('/schoolyears', [StudentController::class, 'getSchoolYear']);
     Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}', [ChartController::class, 'getPlanningRemoteHour']);
     Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}/{status}', [ChartController::class, 'getPlanningStatusHour']);
@@ -44,6 +42,11 @@ Route::middleware(['cors', 'token'])->group(function () {
     Route::get('/charts/students/assisting/{schoolyearId}', [ChartController::class, 'getAllVPlanningPresencesDurations']);
 });
 
-Route::middleware(['cors'])->group(function() {
+Route::middleware(['cors'])->group(function () {
     Route::post('/login', [LoginController::class, 'login']);
+});
+
+Route::middleware(['cors', 'can'])->group(function () {
+    Route::post('/presences/save', [PresenceController::class, 'save']);
+    Route::post('/presences/terminate', [PresenceController::class, 'terminate']);
 });
