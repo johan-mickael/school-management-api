@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware(['cors'])->group(function () {
+Route::middleware(['cors', 'token'])->group(function () {
     Route::get('/dashboards', [DashboardController::class, 'index']);
     Route::get('/plannings/{schoolyearId}', [PlanningsController::class, 'get']);
     Route::get('/plannings/filter/{schoolyearId}/{classId}', [PlanningsController::class, 'filter']);
@@ -42,5 +42,8 @@ Route::middleware(['cors'])->group(function () {
     Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}/{status}', [ChartController::class, 'getPlanningStatusHour']);
     Route::get('/charts/students/assisting/{subjectId}/{schoolyearId}', [ChartController::class, 'getVPlanningPresencesDurations']);
     Route::get('/charts/students/assisting/{schoolyearId}', [ChartController::class, 'getAllVPlanningPresencesDurations']);
+});
+
+Route::middleware(['cors'])->group(function() {
     Route::post('/login', [LoginController::class, 'login']);
 });

@@ -19,7 +19,7 @@ class CreateLoginTable extends Migration
             $table->tinyInteger('user_id');
             $table->timestamp('login_date');
             $table->string('token');
-            $table->timestamp('expiration');
+            $table->timestamp('expiration')->nullable(true);
         });
     }
 

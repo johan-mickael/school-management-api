@@ -18,7 +18,7 @@ class CreatePlanningsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('subject_id');
             $table->unsignedInteger('subclass_id');
-            $table->string('place', 30);
+            $table->string('place', 30)->nullable(true);
             $table->date('planning_date')->nullable(false);
             $table->time('start')->nullable(false);
             $table->time('end')->nullable(false);
@@ -51,8 +51,8 @@ class CreatePlanningsTable extends Migration
         $data = [
             ['id' => 1,'subject_id' => 1, 'subclass_id' => 1, 'place' => 'salle v', 'planning_date' => '2022-01-12', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
             ['id' => 2,'subject_id' => 1, 'subclass_id' => 1, 'place' => 'salle v', 'planning_date' => '2022-01-12', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
-            ['id' => 3,'subject_id' => 1, 'subclass_id' => 1, 'place' => 'salle v', 'planning_date' => '2022-01-13', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
-            ['id' => 4,'subject_id' => 1, 'subclass_id' => 1, 'place' => 'salle v', 'planning_date' => '2022-01-13', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
+            ['id' => 3,'subject_id' => 1, 'subclass_id' => 1, 'place' => null, 'planning_date' => '2022-01-13', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
+            ['id' => 4,'subject_id' => 1, 'subclass_id' => 1, 'place' => null, 'planning_date' => '2022-01-13', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
             ['id' => 5,'subject_id' => 2, 'subclass_id' => 1, 'place' => 'salle v', 'planning_date' => '2022-01-14', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
             ['id' => 6,'subject_id' => 2, 'subclass_id' => 1, 'place' => 'salle v', 'planning_date' => '2022-01-14', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
             ['id' => 7,'subject_id' => 2, 'subclass_id' => 1, 'place' => 'salle v', 'planning_date' => '2022-01-17', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
@@ -61,12 +61,12 @@ class CreatePlanningsTable extends Migration
             ['id' => 10,'subject_id' => 3, 'subclass_id' => 1, 'place' => 'salle d', 'planning_date' => '2022-01-18', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
             ['id' => 11,'subject_id' => 3, 'subclass_id' => 1, 'place' => 'salle d', 'planning_date' => '2022-01-19', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
             ['id' => 12,'subject_id' => 3, 'subclass_id' => 1, 'place' => 'salle d', 'planning_date' => '2022-01-19', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
-            ['id' => 13,'subject_id' => 4, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-12', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
-            ['id' => 14,'subject_id' => 4, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-12', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
+            ['id' => 13,'subject_id' => 4, 'subclass_id' => 2, 'place' => null, 'planning_date' => '2022-01-12', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
+            ['id' => 14,'subject_id' => 4, 'subclass_id' => 2, 'place' => null, 'planning_date' => '2022-01-12', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
             ['id' => 15,'subject_id' => 4, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-13', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
             ['id' => 16,'subject_id' => 4, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-13', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
-            ['id' => 17,'subject_id' => 5, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-14', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
-            ['id' => 18,'subject_id' => 5, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-14', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
+            ['id' => 17,'subject_id' => 5, 'subclass_id' => 2, 'place' => null, 'planning_date' => '2022-01-14', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
+            ['id' => 18,'subject_id' => 5, 'subclass_id' => 2, 'place' => null, 'planning_date' => '2022-01-14', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => true, 'schoolyear_id' => 2],
             ['id' => 19,'subject_id' => 5, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-17', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
             ['id' => 20,'subject_id' => 5, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-17', 'start' => '14:00:00', 'end' => '17:00:00', 'is_remote' => false, 'schoolyear_id' => 2],
             ['id' => 21,'subject_id' => 6, 'subclass_id' => 2, 'place' => 'salle d', 'planning_date' => '2022-01-18', 'start' => '10:00:00', 'end' => '13:00:00', 'is_remote' => false, 'schoolyear_id' => 2],

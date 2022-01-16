@@ -8,9 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
+use function PHPUnit\Framework\isEmpty;
+
 class Login extends Model
 {
     use HasFactory;
+
+    private static $tokenExpiration = 3;
 
     static function login($request)
     {
@@ -19,10 +23,9 @@ class Login extends Model
             ->where('password', md5($request->password))
             ->first();
         if (!$user) {
-            throw new Exception("Informations non valides.");
+            return response('Les informations saisis sont incorrectes.', 401);
         }
-        self::_insert($user);
-        return $user;
+        return self::_insert($user);
     }
 
     static function generateToken($user)
@@ -32,12 +35,8 @@ class Login extends Model
 
     static function _insert($user)
     {
-        $tokenDuration = 5;
-        if ($user->id == 1) {
-            $tokenDuration = 15;
-        }
         $loginDate = date('Y-m-d H:i:s');
-        $expiration = strtotime($loginDate . ' + ' . $tokenDuration . ' minute');
+        $expiration = strtotime($loginDate . ' + ' . self::$tokenExpiration . ' minute');
         $login = [
             'user_id' => $user->id,
             'login_date' => $loginDate,
@@ -45,15 +44,19 @@ class Login extends Model
             'expiration' => date('Y-m-d H:i:s', $expiration)
         ];
         self::insert($login);
+        return [
+            'user' => $user,
+            'login' => $login
+        ];
     }
 
-    static function isConnected($user)
+    static function tokenIsValid($token)
     {
         $dateNow = date('Y-m-d H:i:s');
-        $login = DB::table('users')
-            ->where('user_id', $user->id)
-            ->where('expiration', '<', $dateNow)
+        $login = DB::table('logins')
+            ->where('token', $token)
+            ->where('expiration', '>', $dateNow)
             ->first();
-
+        return $login != null;
     }
 }

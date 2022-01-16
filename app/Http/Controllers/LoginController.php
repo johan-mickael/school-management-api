@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Log;
 class LoginController extends Controller
 {
     public function login(Request $request) {
-        Login::login($request);
+        return Login::login($request);
     }
-
 }

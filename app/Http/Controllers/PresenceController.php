@@ -25,7 +25,6 @@ class PresenceController extends Controller
 
     public static function insertPresence(Request $request, $terminate)
     {
-        Log::channel('api')->info('Info', [$request->get('presences')]);
         $planningId =  $request->presences[0]['planning_id'];
         try {
             DB::beginTransaction();
@@ -33,7 +32,6 @@ class PresenceController extends Controller
             DB::commit();
         } catch (QueryException $ex) {
             DB::rollBack();
-            Log::channel('api')->error('Error insert presence', [$ex->getMessage()]);
         }
     }
 
