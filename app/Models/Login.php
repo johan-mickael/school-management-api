@@ -14,8 +14,6 @@ class Login extends Model
 {
     use HasFactory;
 
-    private static $tokenExpiration = 3;
-
     static function login($request)
     {
         Log::channel('login')->info(json_encode($request));
@@ -37,7 +35,7 @@ class Login extends Model
     static function _insert($user)
     {
         $loginDate = date('Y-m-d H:i:s');
-        $expiration = strtotime($loginDate . ' + ' . self::$tokenExpiration . ' minute');
+        $expiration = strtotime($loginDate . ' + ' . env('TOKEN_EXPIRATION', 5) . ' minute');
         $login = [
             'user_id' => $user->id,
             'user_role' => $user->role,

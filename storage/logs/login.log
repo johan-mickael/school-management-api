@@ -673,3 +673,11 @@
   ),
   'role' => '1',
 )  
+[2022-01-16 11:47:31] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-16 11:51:23] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-16 11:55:09] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-16 18:09:26] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-16 18:13:38] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-16 18:13:44] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-16 18:29:08] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-16 18:30:17] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  

@@ -13708,3 +13708,19 @@
 #34 C:\\Users\\Johan\\Desktop\\myestiam\\api\\Laravel\\server.php(21): require_once('C:\\\\Users\\\\Johan\\\\...')
 #35 {main}
 "} 
+[2022-01-16 18:26:38] local.ERROR: Constant expression contains invalid operations {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Constant expression contains invalid operations at C:\\Users\\Johan\\Desktop\\myestiam\\api\\Laravel\\app\\Models\\Login.php:17)
+[stacktrace]
+#0 {main}
+"} 
+[2022-01-16 18:26:38] local.ERROR: Constant expression contains invalid operations {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Constant expression contains invalid operations at C:\\Users\\Johan\\Desktop\\myestiam\\api\\Laravel\\app\\Models\\Login.php:17)
+[stacktrace]
+#0 {main}
+"} 
+[2022-01-16 18:26:54] local.ERROR: Constant expression contains invalid operations {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Constant expression contains invalid operations at C:\\Users\\Johan\\Desktop\\myestiam\\api\\Laravel\\app\\Models\\Login.php:17)
+[stacktrace]
+#0 {main}
+"} 
+[2022-01-16 18:27:25] local.ERROR: Constant expression contains invalid operations {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Constant expression contains invalid operations at C:\\Users\\Johan\\Desktop\\myestiam\\api\\Laravel\\app\\Models\\Login.php:17)
+[stacktrace]
+#0 {main}
+"} 
