@@ -14,7 +14,7 @@ class Login extends Model
 {
     use HasFactory;
 
-    private static $tokenExpiration = 10;
+    private static $tokenExpiration = 3;
 
     static function login($request)
     {
