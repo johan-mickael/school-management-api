@@ -21,6 +21,6 @@ class VerifyToken
         if(Login::tokenIsValid($request->header('Authorization'))) {
             return $next($request);
         }
-        return response()->json('Votre session a été expiré. Reconnectez-vous.', 401);
+        return response()->json('Votre session est expiré. Reconnectez-vous.', 401);
     }
 }
