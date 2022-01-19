@@ -682,3 +682,913 @@
 [2022-01-16 18:29:08] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
 [2022-01-16 18:30:17] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
 [2022-01-17 09:22:39] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-17 17:57:03] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-17 17:58:57] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 1,
+        'is_present_class' => false,
+        'is_present' => true,
+        'is_late' => true,
+        'arriving_time' => '11:00',
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 2,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 3,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 4,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 5,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 6,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:00:21] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-17 18:00:26] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-17 18:01:46] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 1,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 2,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 3,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 4,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 5,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 6,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:02:19] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 1,
+        'is_present_class' => true,
+        'is_present' => true,
+        'is_late' => 0,
+        'arriving_time' => '10:00:00',
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 2,
+        'is_present_class' => 0,
+        'is_present' => true,
+        'is_late' => 0,
+        'arriving_time' => '10:00:00',
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 3,
+        'is_present_class' => 0,
+        'is_present' => true,
+        'is_late' => true,
+        'arriving_time' => '10:04',
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 4,
+        'is_present_class' => true,
+        'is_present' => true,
+        'is_late' => 0,
+        'arriving_time' => '10:00:00',
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 5,
+        'is_present_class' => 0,
+        'is_present' => true,
+        'is_late' => true,
+        'arriving_time' => '10:15',
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 6,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:02:48] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 1,
+        'is_present_class' => 1,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '10:00:00',
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 2,
+        'is_present_class' => 0,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '10:00:00',
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 3,
+        'is_present_class' => 0,
+        'is_present' => 1,
+        'is_late' => 1,
+        'arriving_time' => '10:04:00',
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 4,
+        'is_present_class' => 1,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '10:00:00',
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 5,
+        'is_present_class' => 0,
+        'is_present' => 1,
+        'is_late' => 1,
+        'arriving_time' => '10:15:00',
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 6,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:03:25] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 1,
+        'is_present_class' => true,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 2,
+        'is_present_class' => true,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 3,
+        'is_present_class' => false,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 4,
+        'is_present_class' => true,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 5,
+        'is_present_class' => false,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 6,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:03:39] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-17 18:04:07] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 1,
+        'is_present_class' => 1,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 2,
+        'is_present_class' => 1,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 3,
+        'is_present_class' => 0,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 4,
+        'is_present_class' => 1,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 5,
+        'is_present_class' => 0,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 8,
+        'subject_id' => 2,
+        'student_id' => 6,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:04:38] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 21,
+        'subject_id' => 6,
+        'student_id' => 7,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 21,
+        'subject_id' => 6,
+        'student_id' => 8,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 21,
+        'subject_id' => 6,
+        'student_id' => 9,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 21,
+        'subject_id' => 6,
+        'student_id' => 10,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 21,
+        'subject_id' => 6,
+        'student_id' => 11,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 21,
+        'subject_id' => 6,
+        'student_id' => 12,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:05:12] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 7,
+        'is_present_class' => true,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 8,
+        'is_present_class' => true,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 9,
+        'is_present_class' => true,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 10,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 11,
+        'is_present_class' => false,
+        'is_present' => true,
+        'is_late' => false,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 12,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:05:18] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 7,
+        'is_present_class' => 1,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 8,
+        'is_present_class' => 1,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 9,
+        'is_present_class' => 1,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 10,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 11,
+        'is_present_class' => 0,
+        'is_present' => 1,
+        'is_late' => 0,
+        'arriving_time' => '14:00:00',
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 22,
+        'subject_id' => 6,
+        'student_id' => 12,
+        'is_present_class' => 0,
+        'is_present' => 0,
+        'is_late' => 0,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-17 18:06:44] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-17 19:58:41] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-17 19:58:47] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-18 10:19:40] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-18 10:19:50] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-18 22:24:15] local.INFO: {"attributes":{},"request":{},"query":{},"server":{},"files":{},"cookies":{},"headers":{}}  
+[2022-01-18 22:24:23] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 1,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 2,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 3,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 4,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 5,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 7,
+        'subject_id' => 2,
+        'student_id' => 6,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-18 22:25:11] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 15,
+        'subject_id' => 4,
+        'student_id' => 7,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 15,
+        'subject_id' => 4,
+        'student_id' => 8,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 15,
+        'subject_id' => 4,
+        'student_id' => 9,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 15,
+        'subject_id' => 4,
+        'student_id' => 10,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 15,
+        'subject_id' => 4,
+        'student_id' => 11,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 15,
+        'subject_id' => 4,
+        'student_id' => 12,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  
+[2022-01-18 22:25:38] local.INFO: array (
+  'data' => 
+  array (
+    'presences' => 
+    array (
+      0 => 
+      array (
+        'planning_id' => 13,
+        'subject_id' => 4,
+        'student_id' => 7,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      1 => 
+      array (
+        'planning_id' => 13,
+        'subject_id' => 4,
+        'student_id' => 8,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      2 => 
+      array (
+        'planning_id' => 13,
+        'subject_id' => 4,
+        'student_id' => 9,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      3 => 
+      array (
+        'planning_id' => 13,
+        'subject_id' => 4,
+        'student_id' => 10,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      4 => 
+      array (
+        'planning_id' => 13,
+        'subject_id' => 4,
+        'student_id' => 11,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+      5 => 
+      array (
+        'planning_id' => 13,
+        'subject_id' => 4,
+        'student_id' => 12,
+        'is_present_class' => false,
+        'is_present' => false,
+        'is_late' => false,
+        'arriving_time' => NULL,
+        'comment' => NULL,
+      ),
+    ),
+  ),
+  'role' => '1',
+)  

@@ -39,8 +39,8 @@ class CreateUsersTable extends Migration
 
     static function insert() {
         $data = [
-            ['email' => 'admin@email.com', 'password' => md5('-root1010'), 'role' => 1],
-            ['email' => 'guest@email.com', 'password' => md5('guest'), 'role' => 0]
+            ['email' => 'admin@email.com', 'password' => md5('JM-r00t'), 'role' => 1],
+            ['email' => 'guest@email.com', 'password' => md5('JM-guest'), 'role' => 0]
         ];
         DB::table('users')->insert($data);
     }
