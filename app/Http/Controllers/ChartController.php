@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class ChartController extends Controller
 {
 
-    public function getPlanningRemoteHour($subjectId, $schoolyearId)
+    public function getSubjectHourRepartition($subjectId, $schoolyearId)
     {
         return Chart::getSubjectChartView($subjectId, $schoolyearId);
     }

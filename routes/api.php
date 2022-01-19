@@ -36,8 +36,7 @@ Route::middleware(['cors', 'token'])->group(function () {
     Route::get('/classes', [ClassController::class, 'get']);
     Route::get('/presences/{planningId}', [PresenceController::class, 'get']);
     Route::get('/schoolyears', [StudentController::class, 'getSchoolYear']);
-    Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}', [ChartController::class, 'getPlanningRemoteHour']);
-    Route::get('/charts/subjects/remote/{subjectId}/{schoolyearId}/{status}', [ChartController::class, 'getPlanningStatusHour']);
+    Route::get('/subjects/charts/{subjectId}/{schoolyearId}', [ChartController::class, 'getSubjectHourRepartition']);
     Route::get('/charts/students/assisting/{subjectId}/{schoolyearId}', [ChartController::class, 'getVPlanningPresencesDurations']);
     Route::get('/charts/students/assisting/{schoolyearId}', [ChartController::class, 'getAllVPlanningPresencesDurations']);
 });
