@@ -118,6 +118,12 @@ return [
             'driver' => 'single',
             'path' => storage_path('logs/api.log'),
             'level' => 'debug'
+        ],
+
+        'login' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/login.log'),
+            'level' => 'debug'
         ]
     ],
 

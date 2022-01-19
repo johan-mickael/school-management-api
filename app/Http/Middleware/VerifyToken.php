@@ -2,10 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Login;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
-class Cors
+class VerifyToken
 {
     /**
      * Handle an incoming request.
@@ -16,9 +18,9 @@ class Cors
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request)
-            ->header('Access-Control-Allow-Origin', '*')
-            ->header('Access-Control-Allow-Methods', '*')
-            ->header('Access-Control-Allow-Headers', 'Content-Type, Authorizations');
+        if(Login::tokenIsValid($request->header('Authorization'))) {
+            return $next($request);
+        }
+        return response()->json('Votre session est expiré. Reconnectez-vous.', 401);
     }
 }

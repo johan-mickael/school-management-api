@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Log;
 class PresenceController extends Controller
 {
 
-    public function get($planningId) {
+    public function get($planningId)
+    {
         $planning = Planning::where('id', $planningId)->first();
         return [
             'presences' => DB::table('PRESENCES')->where('planning_id', '=', $planning->id)->get(),
@@ -25,23 +26,26 @@ class PresenceController extends Controller
 
     public static function insertPresence(Request $request, $terminate)
     {
-        Log::channel('api')->info('Info', [$request->get('presences')]);
-        $planningId =  $request->presences[0]['planning_id'];
+        Log::channel('login')->info($request);
+        $planningId =  $request->data['presences'][0]['planning_id'];
         try {
             DB::beginTransaction();
-            Presence::_insert($request->presences, $planningId, $terminate);
+            Presence::_insert($request->data['presences'], $planningId, $terminate);
             DB::commit();
         } catch (QueryException $ex) {
             DB::rollBack();
-            Log::channel('api')->error('Error insert presence', [$ex->getMessage()]);
         }
     }
 
-    public function save(Request $request) {
+    public function save(Request $request)
+    {
         self::insertPresence($request, false);
+        return response()->json('Fiche de présence enregistré avec succès.');
     }
 
-    public function terminate(Request $request) {
+    public function terminate(Request $request)
+    {
         self::insertPresence($request, true);
+        return  response()->json('Le cours a été terminé avec succès.');
     }
 }

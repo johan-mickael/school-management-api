@@ -3,9 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Exception;
 use Illuminate\Http\Request;
 
-class Cors
+class CheckRole
 {
     /**
      * Handle an incoming request.
@@ -16,9 +17,8 @@ class Cors
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request)
-            ->header('Access-Control-Allow-Origin', '*')
-            ->header('Access-Control-Allow-Methods', '*')
-            ->header('Access-Control-Allow-Headers', 'Content-Type, Authorizations');
+        if ($request->role != 1)
+            return response()->json('Connectez vous en tant que super administrateur pour sauvegarder des ressources.', 403);
+        return $next($request);
     }
 }

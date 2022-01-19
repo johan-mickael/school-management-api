@@ -19,16 +19,17 @@ class Planning extends Model
 
     public static function get_v_plannings_for_calendar($schoolyearId, $subclass_id = null)
     {
-        $query = DB::table('v_plannings')
-            ->where('schoolyear_id', '=', $schoolyearId);
+        $query = sprintf("select * from v_plannings where schoolyear_id = %s", $schoolyearId);
         if ($subclass_id != null)
-            $query = $query->where('subclass_id', '=', $subclass_id);
-        $plannings = $query->get();
+            $query = sprintf($query . " and subclass_id = %s", $subclass_id);
+        $plannings = DB::select($query);
         $res = array();
         for ($i = 0; $i < count($plannings); $i++) {
             $planning = $plannings[$i];
             $res[$i]['planningId'] = $planning->id;
-            $res[$i]['title'] = strtoupper($planning->subclass_name)  . ' - ' . strtoupper($planning->subject_name)  . ' : ' . ucwords($planning->professor_name)  . ' - ' .  ucwords($planning->place);
+            $res[$i]['title'] = strtoupper($planning->subclass_name)  . ' - ' . strtoupper($planning->subject_name)  . ' : ' . ucwords($planning->professor_name);
+            if($planning->place)
+                $res[$i]['title'] .= ' - ' .  ucwords($planning->place);
             $res[$i]['start'] = concat_date_and_time($planning->planning_date, $planning->start);
             $res[$i]['end'] = concat_date_and_time($planning->planning_date, $planning->end);
             $res[$i]['isRemote'] = $planning->is_remote;
