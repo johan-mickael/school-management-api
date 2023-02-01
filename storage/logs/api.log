@@ -1252,3 +1252,5 @@
 [2023-02-01 23:14:16] local.INFO: [{"query":"select * from `logins` where `token` = ? and `expiration` > ? limit 1","bindings":["822ec58ccd40ae715508615cafa22431bc8022d6","2023-02-01 23:14:16"],"time":1.52}]  
 [2023-02-01 23:14:19] local.INFO: [{"query":"select * from `logins` where `token` = ? and `expiration` > ? limit 1","bindings":["822ec58ccd40ae715508615cafa22431bc8022d6","2023-02-01 23:14:19"],"time":3.84}]  
 [2023-02-01 23:14:21] local.INFO: [{"query":"select * from `logins` where `token` = ? and `expiration` > ? limit 1","bindings":["822ec58ccd40ae715508615cafa22431bc8022d6","2023-02-01 23:14:21"],"time":3.27}]  
+[2023-02-01 23:20:41] local.INFO: [{"query":"select * from `logins` where `token` = ? and `expiration` > ? limit 1","bindings":["822ec58ccd40ae715508615cafa22431bc8022d6","2023-02-01 23:20:41"],"time":1.39}]  
+[2023-02-01 23:20:41] local.INFO: [{"query":"select * from `logins` where `token` = ? and `expiration` > ? limit 1","bindings":["822ec58ccd40ae715508615cafa22431bc8022d6","2023-02-01 23:20:41"],"time":1.26}]  
