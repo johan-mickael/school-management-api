@@ -55,7 +55,7 @@ class CreateSubclassesTable extends Migration
 
     static function create_view_subclasses() {
         DB::unprepared("
-            CREATE OR REPLACE VIEW v_subclasses AS SELECT
+            CREATE OR REPLACE VIEW v_SUBCLASSES AS SELECT
             s.id,
             s.name,
             s.class_id,

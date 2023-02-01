@@ -12,7 +12,7 @@ use function PHPUnit\Framework\isNull;
 class Planning extends Model
 {
     use HasFactory;
-    protected $table = 'V_PLANNINGS';
+    protected $table = 'v_plannings';
     public const status_created = 0;
     public const status_saved = 1;
     public const status_done = 2;
@@ -41,7 +41,7 @@ class Planning extends Model
 
     public static function updateStatus($planningId, $status)
     {
-        DB::table('PLANNINGS')
+        DB::table('plannings')
             ->where('id', $planningId)
             ->update(['status' => $status]);
     }

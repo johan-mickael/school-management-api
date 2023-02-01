@@ -17,6 +17,6 @@ class SubclassController extends Controller
     {
         if ($classId < 1)
             return $this->get();
-        return DB::table('V_SUBCLASSES')->where('class_id', '=', $classId)->get();
+        return DB::table('v_subclasses')->where('class_id', '=', $classId)->get();
     }
 }

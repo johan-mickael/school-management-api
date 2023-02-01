@@ -18,7 +18,7 @@ class PresenceController extends Controller
     {
         $planning = Planning::where('id', $planningId)->first();
         return [
-            'presences' => DB::table('PRESENCES')->where('planning_id', '=', $planning->id)->get(),
+            'presences' => DB::table('presences')->where('planning_id', '=', $planning->id)->get(),
             'students' => Student::getStudents($planning->subclass_id, $planning->schoolyear_id),
             'planning' => $planning
         ];

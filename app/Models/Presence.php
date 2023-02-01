@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 class Presence extends Model
 {
     use HasFactory;
-    protected $table = 'PRESENCES';
+    protected $table = 'presences';
 
     public static function _insert($input, $planningId, $terminate)
     {
@@ -29,14 +29,14 @@ class Presence extends Model
 
     public static function deleteAllPresence($planningId)
     {
-        DB::table('PRESENCES')
+        DB::table('presences')
             ->where('planning_id', '=', $planningId)
             ->delete();
     }
 
     public static function isSaved($planningId)
     {
-        $checkPlanning = DB::table('PRESENCES')
+        $checkPlanning = DB::table('presences')
             ->where('planning_id', '=', $planningId)
             ->get();
         return $checkPlanning->count();

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Subclass extends Model
 {
     use HasFactory;
-    protected $table = 'v_SUBCLASSES';
+    protected $table = 'v_subclasses';
 
 }

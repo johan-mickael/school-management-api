@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
     public function getSchoolYear() {
-        return DB::table('SCHOOLYEAR')->orderByDesc('start')->get();
+        return DB::table('schoolyear')->orderByDesc('start')->get();
     }
 
     public function getStudents($subclassId, $schoolYearId) {
-        return DB::table('V_STUDENTS_SUBCLASSES_SCHOOLYEAR')
+        return DB::table('v_students_subclasses_schoolyear')
             ->where('subclass_id', '=', $subclassId)
             ->where('schoolyear_id', '=', $schoolYearId)
             ->get();
